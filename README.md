@@ -1,6 +1,6 @@
 ## Goal
 
-The main goal of the app is to create an **Angular** application, which is able to authenticate a user with a the previously developed backend provider.
+The main goal of the app is to create an **Angular** application, which is able to authenticate a user with the previously developed backend provider using JWT.
 
 ## Basics
 
