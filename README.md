@@ -8,8 +8,9 @@ The app should have a **Login** page without any design
 
 ## Login
 
-The login page should contain a **form** ([Angular forms](https://angular.io/start/start-forms)) with two controls: **username** (or email) and **password**. Use basic validation, meaning that both fields are required, and the password should be at least 8 characters long.
-Occurring errors must be displayed to the user in a form of your choosing.
+The login page should contain a **form** ([Angular forms](https://angular.io/start/start-forms)) with two fields: **email** and **password**. 
+Make sure to implement basic validation, meaning that both fields are required, the email has a valid email format, and the password is at least 8 characters long and has at least one uppercase letter.
+Occurring errors must be displayed to the user in a form of your choosing. 
 
 ## Auth Service
 
