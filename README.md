@@ -1,27 +1,31 @@
-# JWTAuth
+## Goal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
+The main goal of the app is to create an **Angular** application, which is able to authenticate a user with a the previously developed backend provider.
 
-## Development server
+## Basics
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The app should have a **Login** page without any design
 
-## Code scaffolding
+## Login
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The login page should contain a **form** ([Angular forms](https://angular.io/start/start-forms)) with two controls: **username** (or email) and **password**. Use basic validation, meaning that both fields are required, and the password should be at least 8 characters long.
+Occurring errors must be displayed to the user in a form of your choosing.
 
-## Build
+## Auth Service
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Generate an authentication service with the **Angular CLI**.
+This service should implement methods which respectively let the user to **login** and **logout**.
+Make sure to have a variable to determine whether the user is logged in.
+Additional helper methods can be implemented as well.
+The token returned from the backend should be decoded and stored on the frontend (in localStorage). For this you can research libraries that help you decode JWT.
+If the token expires, the user should be logged out immediately.
 
-## Running unit tests
+# XTRAH
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Routing + Guarded page
 
-## Running end-to-end tests
+### Only do the following if you've done all the above, the code runs and it works as expected!
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Update the app so that there are two separate pages, which you can navigate between. You'll be able to do this if you research a bit on **Routing**.
+Make one page only accessible once the user has logged in, otherwise the user is redirected to the login page.
+A little help here: you will need **Route Guards**
