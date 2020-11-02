@@ -1,0 +1,26 @@
+<form [formGroup]="loginForm">
+
+  <div>
+    <label for="email">E-mail:
+      <input id="email" type="email" formControlName="email">
+    </label>
+    <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched &&
+    (!loginForm.controls['email'].dirty || (loginForm.controls['email'].dirty && !loginForm.controls['email'].hasError('pattern')))">Field required!</div>
+    <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].hasError('pattern')">Email format is not correct!</div>
+  </div>
+
+  <div>
+    <label for="pw">Password:
+      <input id="pw" type="password" formControlName="password">
+    </label>
+    <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched &&
+    (!loginForm.controls['password'].dirty || loginForm.controls['password'].dirty && !loginForm.controls['password'].hasError('pattern') &&
+     !loginForm.controls['password'].hasError('minlength'))">Field required!</div>
+    <div *ngIf="loginForm.controls['password'].hasError('pattern')">Password must contain upper case letter!</div>
+    <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].hasError('minlength')">Password must be at least 8 characters long!</div>
+
+  </div>
+
+  <button (click)="login()" [disabled]="loginForm.invalid" type="button">Submit</button>
+
+</form>

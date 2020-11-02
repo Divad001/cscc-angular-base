@@ -1,0 +1,9 @@
+<button (click)="logout()" type="button">Logout</button>
+
+<button (click)="test()" type="button">Test</button>
+
+<ul>
+  <li *ngFor="let value of testValue$ | async; index as i">
+    {{ i + 1 }}. {{ value.name }}
+  </li>
+</ul>
